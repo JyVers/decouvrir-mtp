@@ -25,4 +25,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         scrollToSlide(currentIndex);
     });
+
+    // Gestion du scroll sur mobile (événements tactiles)
+    window.addEventListener("touchstart", function (event) {
+        touchStartY = event.touches[0].clientY;
+    });
+
+    window.addEventListener("touchend", function (event) {
+        const touchEndY = event.changedTouches[0].clientY;
+        if (isScrolling) return;
+
+        if (touchStartY - touchEndY > 50) { // Si on fait un swipe vers le bas
+            currentIndex = Math.min(currentIndex + 1, slides.length - 1);
+        } else if (touchEndY - touchStartY > 50) { // Si on fait un swipe vers le haut
+            currentIndex = Math.max(currentIndex - 1, 0);
+        }
+
+        scrollToSlide(currentIndex);
+    });
+
 });
