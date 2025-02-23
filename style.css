@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@400;600&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    overflow: hidden;
+}
+.second_slide{
+}
+
+.slide{
+    display: flex;
+    position: relative;
+}
+/* LEFT */ 
+
+.left{
+    width: 50vw;
+    height: 100vh;
+    padding-right: 10vw;
+    padding-left: 10vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: 'KoHo';
+}
+
+/* RIGHT */ 
+
+.right{
+    height: 100vh;
+    width: 50vw;
+    padding: 10px;
+}
+
+.inside{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-size: cover;
+}
+
+.first_slide .inside{
+    background-image: url(img/main.jpg);
+}
+
+.second_slide .inside{
+    background-image: url(img/peyrou.jpg);
+}
+
+.third_slide .inside{
+    background-image: url(img/fontaine_des_trois_graces.jpg);
+}
+
+.fourth_slide .inside{
+    background-image: url(img/musee_fabre.jpg);
+}
+
+.fifth_slide .inside{
+    background-image: url(img/arc_de_triomphe.jpg);
+}
+.sixth_slide .inside{
+    background-image: url(img/cathedrale.jpg);
+}
+
+/* MEDIAS QUERIES */
+/* Ajouter des photos horizontales pour un meilleur rendu */
+
+@media (max-width: 700px) {
+    .slide{flex-direction: column;}
+    .left{width: 100vw; height: 50vh;}
+    .right{width: 100vw; height: 50vh;}
+
+    .first_slide .inside{
+        background-image: url(img/main_mobile.jpg);
+    }
+    
+    .second_slide .inside{
+        background-image: url(img/peyrou_mobile.jpg);
+    }
+    
+    .third_slide .inside{
+        background-image: url(img/fontaine_des_trois_graces_mobile.jpg);
+    }
+    
+    .fourth_slide .inside{
+        background-image: url(img/musee_fabre_mobile.jpg);
+    }
+    
+    .fifth_slide .inside{
+        background-image: url(img/arc_de_triomphe_mobile.webp);
+    }
+    .sixth_slide .inside{
+        background-image: url(img/cathedrale_mobile.jpg);
+    }
+}
